@@ -23,28 +23,24 @@ public enum Season {
     }
 
     static Season fromPlName(String name) {
-        Season season = null;
         for (Season s : values()) {
             if (s.plName.equalsIgnoreCase(name)) {
-                season = s;
-                break;
+                return s;
             }
         }
 
-        return season;
+        return null;
     }
 
     static Season fromMonth(Month month) {
-        Season season = null;
         for (Season s : values()) {
             for (Month m : s.months) {
                 if (m == month) {
-                    season = s;
-                    break;
+                    return s;
                 }
             }
         }
 
-        return season;
+        return null;
     }
 }
